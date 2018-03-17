@@ -16,7 +16,7 @@ install_github("lrjoshi/gcplotR")
 gcplotR::gcplotR(data)
 
 ## Arguments
-x	
+data
 = a data table with your variables like titer,cell type, MOI
 
 ## Details
