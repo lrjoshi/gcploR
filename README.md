@@ -29,8 +29,8 @@ Lok Raj Joshi
 
 ## Examples
 
-gcplotR(data)
+gcplotR::gcplotR(data)
 
-gcplotR(read.csv("myfile.csv",header=T))
+gcplotR::gcplotR(read.csv("myfile.csv",header=T))
 
 
