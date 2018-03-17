@@ -1,0 +1,59 @@
+#This Package Makes Virus Growth Curve
+#data should be the table format as shown in Example
+gcplotR<- function (data) {
+  colnames(data)
+  str(data)
+  data$MOI=as.factor(data$MOI)
+  data$hpi=as.factor(data$hpi)
+  #New data structure
+  str(data)
+  summary(data)
+  attach(data)
+
+library(ggplot2)
+library(plyr)
+
+# Run the functions length, mean, and sd on the value of "change" for each group,
+# broken down by sex + condition
+cdata <- ddply(data, c("Cell","hpi","MOI"), summarise,
+               N    = length(Titer),
+               mean = mean(Titer),
+               sd   = sd(Titer),
+               se   = sd / sqrt(N)
+)
+head(cdata)
+View(cdata)
+plot= function ()
+  #plot data
+  library(ggplot2)
+# The errorbars overlapped, so use position_dodge to move them horizontally
+pd <- position_dodge(0.5) # move them .05 to the left and right
+
+#Changing Facet Level 0.1 to 0.1 MOI
+levels(cdata$MOI) <- c("0.1 MOI", "10 MOI")
+
+
+
+# The errorbars overlapped, so use position_dodge to move them horizontally
+pd <- position_dodge(0.05) # move them .05 to the left and right
+
+x=ggplot(cdata, aes(x=hpi, y=mean, colour=Cell, group=Cell)) +
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), colour="black", width=.5, position=pd) +
+  geom_line(position=pd) +
+  geom_point(position=pd, size=2, shape=15, fill="white") + # 21 is filled circle
+  xlab("Hours post infection") +
+  ylab("Viral titer (log10)") +
+  scale_colour_hue(name="Cell type",    # Legend label, use darker colors
+                   breaks=c("OFTu", "STU"),
+                   labels=c("OFTu", "STU"),
+                   l=50) +
+  # Use darker colors, lightness=40
+  ggtitle("data") +
+  expand_limits(y=0) +                        # Expand y range
+  scale_y_continuous(breaks=0:10*1) +         # Set tick every 4
+  theme_bw(base_size = 16) +
+  theme(legend.justification=c(1,0),
+        legend.position=c(1,0))+facet_grid(.~MOI,scales="free")  # Position legend in bottom right
+x
+}
+
