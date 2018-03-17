@@ -8,7 +8,7 @@ Virus Growth Curve Graph Creator
 gcplotR is designed to make virus growth curve plots. This can make line graphs and also plots standard error. It can take multiple time points, multiple cell lines and multiple experiments as an input.
 }
 \usage{
-gcplotR(x)
+gcplotR::gcplotR(data)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
