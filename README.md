@@ -8,6 +8,7 @@ gcplotR is designed to make virus growth curve plots. This can make line graphs 
 
 ## Installation in R
 library (devtools)
+
 install_github("lrjoshi/gcplotR")
 
 ## Usage
@@ -29,6 +30,7 @@ Lok Raj Joshi
 ## Examples
 
 gcplotR(data)
+
 gcplotR(read.csv("myfile.csv",header=T))
 
 
