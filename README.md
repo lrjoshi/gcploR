@@ -13,7 +13,7 @@ install_github("lrjoshi/gcplotR")
 
 ## Usage
 
-gcplotR(x)
+gcplotR::gcplotR(data)
 
 ## Arguments
 x	
