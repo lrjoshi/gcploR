@@ -7,13 +7,13 @@
 gcplotR is designed to make virus growth curve plots. This can make line graphs and also plots standard error. It can take multiple time points, multiple cell lines and multiple experiments as an input.
 
 ## Installation in R
-library (devtools)
+>library (devtools)
 
-install_github("lrjoshi/gcplotR")
+>install_github("lrjoshi/gcplotR")
 
 ## Usage
 
-gcplotR::gcplotR(data)
+>gcplotR::gcplotR(data)
 
 ## Arguments
 data
@@ -29,8 +29,8 @@ Lok Raj Joshi
 
 ## Examples
 
-gcplotR::gcplotR(data)
+>gcplotR::gcplotR(data)
 
-gcplotR::gcplotR(read.csv("myfile.csv",header=T))
+>gcplotR::gcplotR(read.csv("myfile.csv",header=T))
 
 
