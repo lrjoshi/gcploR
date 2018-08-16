@@ -1,5 +1,14 @@
+---
+title: "Virus Growth Curve Grpah"
+author: "Lok Raj Joshi"
+date: "March 17, 2018"
+output: html_document
+---
+## Virus Growth Curve in R ##
+
 #This Package Makes Virus Growth Curve
 #data should be the table format as shown in Example
+```{}
 gcplotR<- function (data) {
   colnames(data)
   str(data)
@@ -48,7 +57,7 @@ x=ggplot(cdata, aes(x=hpi, y=mean, colour=Cell, group=Cell)) +
                    labels=c("OFTu", "STU"),
                    l=50) +
   # Use darker colors, lightness=40
-  ggtitle("Growth Curve") +
+  ggtitle("data") +
   expand_limits(y=0) +                        # Expand y range
   scale_y_continuous(breaks=0:10*1) +         # Set tick every 4
   theme_bw(base_size = 16) +
@@ -56,4 +65,9 @@ x=ggplot(cdata, aes(x=hpi, y=mean, colour=Cell, group=Cell)) +
         legend.position=c(1,0))+facet_grid(.~MOI,scales="free")  # Position legend in bottom right
 x
 }
+```
+#Now run function with the data 
 
+```r{}
+gcplotR(data)
+```
