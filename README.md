@@ -19,6 +19,12 @@ gcplotR is designed to make virus growth curve plots. This can make line graphs 
 data
 = a data table with your variables like titer,cell type, MOI
 
+
+Data variable names should follow the following format. (Case sensetive)
+
+![Image description](https://github.com/lrjoshi/gcplotR/blob/master/data_format.JPG)
+
+
 ## Details
 
 You can either directly read csv file or you can first add you csv file to some arguments and then you can pass the arguments to the function gcplotR.
