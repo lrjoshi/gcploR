@@ -40,3 +40,8 @@ Lok Raj Joshi
 >gcplotR::gcplotR(read.csv("myfile.csv",header=T))
 
 
+
+## Sample Image
+
+
+![Image description](https://github.com/lrjoshi/gcplotR/blob/master/C159S.png)
